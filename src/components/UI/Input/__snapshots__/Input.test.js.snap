@@ -41,6 +41,9 @@ exports[`rendering renders Input with error 1`] = `
         class="input-element"
         name="amount"
       />
+      <p>
+        This field required.
+      </p>
     </div>
   </div>
 </DocumentFragment>
