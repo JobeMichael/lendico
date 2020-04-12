@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MonthlyRate from "../../components/MonthlyRate/MonthlyRate";
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
+import Select from "../../components/UI/Select/Select";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import validation from "../../helper/validation";
 import * as loanCalculatorActions from "../../store/actions/loanCalculator";
@@ -22,26 +23,34 @@ const LoanCalculator = () => {
   });
 
   const onSubmit = async (formValues) => {
-    dispatch(loanCalculatorActions.calculateInstallment());
+    console.log(formValues);
+    dispatch(loanCalculatorActions.calculateInstallment(formValues));
   };
+
+  const yearOptions = [...Array(4)].map((item, index) => ({
+    value: index + 1,
+    label: `${index + 1} year`,
+  }));
+
+  console.log(yearOptions);
 
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="fields-wrapper">
           <Input
+            defaultValue="10000"
             name="amount"
             label="Amount"
             type="number"
             inputRef={register(validation.amount)}
             errors={errors}
           />
-          <Input
+          <Select
             name="duration"
             label="Duration"
-            type="number"
-            inputRef={register(validation.duration)}
             errors={errors}
+            optionsData={yearOptions}
           />
           <Button disabled={false}>OK</Button>
         </div>

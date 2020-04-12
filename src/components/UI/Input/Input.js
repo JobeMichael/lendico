@@ -3,7 +3,7 @@ import "./Input.css";
 
 const input = ({ label, name, errors, inputRef, ...rest }) => (
   <div className="field">
-    <label className="label">{label} : </label>
+    <label className="label">{label}</label>
     <div className="control">
       <input
         name={name}

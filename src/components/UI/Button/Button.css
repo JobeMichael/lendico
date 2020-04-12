@@ -1,18 +1,17 @@
 .button {
-  background-color: #75a3b585;
+  background-color: #29bdba;
   border: none;
-  color: #100909;
+  color: #fff;
   outline: none;
   cursor: pointer;
   font: inherit;
   padding: 12px 30px;
   margin: 10px;
   font-weight: bold;
-  border-radius: 5px;
   margin-left: 70px;
 }
 .button:hover {
-  background-color: #347b9685;
+  background-color: #004055;
 }
 
 .Button:first-of-type {

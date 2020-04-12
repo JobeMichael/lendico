@@ -6,12 +6,12 @@ const validation = {
       message: "This input is number only.",
     },
     min: {
-      value: 1,
-      message: "This amount should be between 1 and 10000000.",
+      value: 10000,
+      message: "This amount should be between 10000 and 100000.",
     },
     max: {
-      value: 10000000,
-      message: "This amount should be between 1 and 10000000.",
+      value: 100000,
+      message: "This amount should be between 10000 and 100000.",
     },
   },
   duration: {
@@ -22,11 +22,11 @@ const validation = {
     },
     min: {
       value: 1,
-      message: "Duration should be between 1 to 10 years",
+      message: "Duration should be between 1 to 5 years",
     },
     max: {
-      value: 10,
-      message: "Duration should be between 1 to 10 years",
+      value: 5,
+      message: "Duration should be between 1 to 5 years",
     },
   },
 };

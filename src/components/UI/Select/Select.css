@@ -1,0 +1,12 @@
+.Dropdown-control {
+  border: 2px solid rgb(122, 117, 117);
+}
+
+.Dropdown-control option {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.control-select {
+  width: 150px;
+}

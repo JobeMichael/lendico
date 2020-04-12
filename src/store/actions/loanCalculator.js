@@ -5,11 +5,14 @@ export const CALCULATE_INSTALLMENT_REQUEST = "CALCULATE_INSTALLMENT_REQUEST";
 export const CALCULATE_INSTALLMENT_SUCCESS = "CALCULATE_INSTALLMENT_SUCCESS";
 export const CALCULATE_INSTALLMENT_FAILURE = "CALCULATE_INSTALLMENT_FAILURE";
 
-export const calculateInstallment = () => async (dispatch) => {
+export const calculateInstallment = (formValues) => async (dispatch) => {
   dispatch(calculateInstallmentRequest());
 
   try {
-    const res = await loanCalculator.postLoanCalculator("loanCalculator", {});
+    const res = await loanCalculator.postLoanCalculator(
+      "loanCalculator",
+      formValues
+    );
     dispatch(calculateInstallmentSuccess(res.data));
   } catch (error) {
     dispatch(calculateInstallmentFailure(errorHandler(error)));

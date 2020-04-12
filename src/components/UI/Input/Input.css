@@ -25,18 +25,20 @@
 
 .input-element {
   outline: none;
-  border: 2px solid #948a8a;
-  background-color: white;
-  font-size: 18px;
+  border: 2px solid rgb(122, 117, 117);
+  background-color: transparent;
+  font-size: 20px;
   padding: 6px 10px;
   display: block;
   width: 150px;
   box-sizing: border-box;
+  color: #000;
+  font-weight: 700;
 }
 
 .input-element:focus {
   outline: none;
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
 }
 
 .invalid {
