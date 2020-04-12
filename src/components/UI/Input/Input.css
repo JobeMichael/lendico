@@ -2,25 +2,27 @@
   display: flex;
   align-items: center;
   position: relative;
+  flex-direction: column;
 }
 .field:first-child {
   margin-right: 50px;
 }
-.Input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
+
 .field p {
   position: absolute;
   margin: 0;
   font-size: 12px;
-  color: red;
+  margin-top: 6px;
+  color: #097371;
+  font-weight: 600;
 }
 
 .label {
-  font-size: 18px;
+  font-size: 14px;
   margin-right: 8px;
+  align-self: baseline;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .input-element {
@@ -34,6 +36,8 @@
   box-sizing: border-box;
   color: #000;
   font-weight: 700;
+  margin-top: 12px;
+  line-height: 1.5;
 }
 
 .input-element:focus {
@@ -57,11 +61,8 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.field p {
-  color: #bf1650;
-}
 
-.field p::before {
+/* .field p::before {
   display: inline;
   content: "⚠ ";
-}
+} */

@@ -1,17 +1,24 @@
 import React from "react";
-import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import "./Select.css";
 
-const Select = ({ label, optionsData, name, errors, inputRef }) => {
+const Select = ({ label, optionsData, name, infoMsg, ...rest }) => {
   const defaultOption = optionsData[0];
-
+  let options = optionsData.map(({ value, label }) => {
+    return (
+      <option key={value} value={value}>
+        {label}
+      </option>
+    );
+  });
   return (
     <div className="field">
       <label className="label">{label} </label>
       <div className="control-select">
-        <Dropdown name={name} options={optionsData} value={defaultOption} />
-        {errors[name] && <p>{errors[name].message}</p>}
+        <select className="select" name={name} value={defaultOption} {...rest}>
+          {options}
+        </select>
+        <p>{infoMsg}</p>
       </div>
     </div>
   );
