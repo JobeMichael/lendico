@@ -4,6 +4,7 @@ exports[`rendering renders Button correctly 1`] = `
 <DocumentFragment>
   <button
     class="button"
+    data-testid="button-submit"
     type="submit"
   >
     OK

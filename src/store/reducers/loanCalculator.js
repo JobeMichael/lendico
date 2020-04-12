@@ -4,7 +4,7 @@ import {
   CALCULATE_INSTALLMENT_SUCCESS,
 } from "../actions/loanCalculator";
 
-const initialState = {
+export const initialState = {
   loading: false,
   installment: 0,
   error: null,
@@ -18,7 +18,6 @@ export default function loanCalculator(state = initialState, action) {
         loading: true,
       };
     case CALCULATE_INSTALLMENT_SUCCESS:
-      console.log("reducer", action);
       return {
         loading: false,
         error: null,

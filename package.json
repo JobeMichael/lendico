@@ -38,6 +38,16 @@
   },
   "devDependencies": {
     "moxios": "^0.4.0",
-    "mutation-observer": "^1.0.3"
+    "mutation-observer": "^1.0.3",
+    "redux-mock-store": "^1.5.4"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__snapshots__/",
+      "/src/App.js",
+      "/src/serviceWorker.js",
+      "index.js*"
+    ]
   }
 }

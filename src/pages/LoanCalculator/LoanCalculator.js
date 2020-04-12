@@ -7,15 +7,14 @@ import Input from "../../components/UI/Input/Input";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import validation from "../../helper/validation";
 import * as loanCalculatorActions from "../../store/actions/loanCalculator";
-// import loanCalculator from "../../services/loanCalculator";
 import "./LoanCalculator.css";
 
 const LoanCalculator = () => {
-  const { installment, loading } = useSelector((state) => state.loanCalculator);
+  const { installment, loading, error: submitError } = useSelector(
+    (state) => state.loanCalculator
+  );
+  console.log("LoanCalculator -> submitError", submitError);
 
-  // const [monthlyInstallment, setMonthlyInstallment] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  // const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
   const { register, errors, handleSubmit } = useForm({
@@ -24,14 +23,6 @@ const LoanCalculator = () => {
 
   const onSubmit = async (formValues) => {
     dispatch(loanCalculatorActions.calculateInstallment());
-    // setLoading(true);
-    // const { amount, duration } = formValues;
-    // const { data } = await loanCalculator.postLoanCalculator("loanCalculator", {
-    //   amount,
-    //   duration,
-    // });
-    // // setMonthlyInstallment(data?.monthlyInstallment || "");
-    // setLoading(false);
   };
 
   return (

@@ -3,7 +3,6 @@ import { ErrorMessage } from "react-hook-form";
 import "./Input.css";
 
 const input = ({ label, name, errors, inputRef, ...rest }) => {
-  console.log(errors);
   return (
     <div className="field">
       <label className="label">{label} : </label>

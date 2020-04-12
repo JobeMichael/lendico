@@ -1,12 +1,11 @@
 const errorHandler = (error) => {
   if (error.response) {
-    //console.log("Response Error", error.response);
+    return "Something wrong with the response, Try agin!";
   } else if (error.request) {
-    //console.log("Request Error", error.response);
+    return "Something wrong with your request, Try agin!";
   } else {
-    //console.log("Error", error.message);
+    return "Error while processing your request";
   }
-  return { message: "API Error" };
 };
 
 export default errorHandler;

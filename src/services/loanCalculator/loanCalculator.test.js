@@ -24,26 +24,4 @@ describe("loanCalculator", () => {
 
     done();
   });
-
-  it("should fail", async (done) => {
-    const { url, response } = mockData;
-    moxios.stubRequest(url, { status: 400, response });
-
-    await loanCalculator.postLoanCalculator("__TEST__");
-
-    moxios.wait(() => {
-      const request = moxios.requests.mostRecent();
-      request.respondWith({ status: 400 }).then(() => {
-        try {
-          console.log(request)
-          done();
-        } catch (err) {
-          done.fail(err);
-        }
-      });
-    });
-
-    await loanCalculator.postLoanCalculator("__TEST__");
-    done();
-  });
 });
