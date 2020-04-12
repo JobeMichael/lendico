@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering renders LoanCalculator correctly 1`] = `
+<DocumentFragment>
+  <form>
+    <div
+      class="fields-wrapper"
+    >
+      <div
+        class="field"
+      >
+        <label
+          class="label"
+        >
+          Amount : 
+        </label>
+        <div
+          class="control"
+        >
+          <input
+            autocomplete="off"
+            class="input-element"
+            name="amount"
+            type="number"
+          />
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <label
+          class="label"
+        >
+          Duration : 
+        </label>
+        <div
+          class="control"
+        >
+          <input
+            autocomplete="off"
+            class="input-element"
+            name="duration"
+            type="number"
+          />
+        </div>
+      </div>
+      <button
+        class="button"
+        type="submit"
+      >
+        OK
+      </button>
+    </div>
+  </form>
+  <div
+    class="monthly-rate"
+  >
+    <p
+      data-testid="infoText"
+    >
+      Enter Amount and duration to calculate the installment
+    </p>
+  </div>
+</DocumentFragment>
+`;

@@ -3,30 +3,33 @@ import { useForm } from "react-hook-form";
 import MonthlyRate from "../../components/MonthlyRate/MonthlyRate";
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
+import Spinner from "../../components/UI/Spinner/Spinner";
 import validation from "../../helper/validation";
 import loanCalculator from "../../services/loanCalculator";
 import "./LoanCalculator.css";
 
 const LoanCalculator = () => {
   const [monthlyInstallment, setMonthlyInstallment] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { register, errors, handleSubmit } = useForm({
     validateCriteriaMode: "all",
   });
+
   const onSubmit = async (formValues) => {
-    console.log(formValues);
+    setLoading(true);
     const { amount, duration } = formValues;
     const { data } = await loanCalculator.postLoanCalculator("loanCalculator", {
       amount,
       duration,
     });
     setMonthlyInstallment(data?.monthlyInstallment || "");
+    setLoading(false);
   };
 
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>ErrorMessage</h1>
         <div className="fields-wrapper">
           <Input
             name="amount"
@@ -42,13 +45,16 @@ const LoanCalculator = () => {
             inputRef={register(validation.duration)}
             errors={errors}
           />
-
           <Button disabled={false}>OK</Button>
         </div>
       </form>
-
-      {/* <Spinner /> */}
-      <MonthlyRate monthlyRate={monthlyInstallment} />
+      <div className="monthly-rate">
+        {loading ? (
+          <Spinner />
+        ) : (
+          <MonthlyRate monthlyRate={monthlyInstallment} />
+        )}
+      </div>
     </>
   );
 };

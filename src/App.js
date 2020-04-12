@@ -5,7 +5,7 @@ import LoanCalculator from "./pages/LoanCalculator/LoanCalculator";
 function App() {
   return (
     <div className="App">
-      <header></header>
+      <h1>Loan calculator</h1>
       <LoanCalculator />
     </div>
   );

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering renders MonthlyRate correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="monthly-rate-label"
+  >
+    Monthly Installment :
+  </span>
+  <span
+    class="monthly-rate-value"
+  >
+    123 EUR
+  </span>
+</DocumentFragment>
+`;

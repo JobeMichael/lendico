@@ -6,7 +6,7 @@ const input = ({ label, name, errors, inputRef, ...rest }) => {
   console.log(errors);
   return (
     <div className="field">
-      <label className="label">{label}</label>
+      <label className="label">{label} : </label>
       <div className="control">
         <input
           name={name}

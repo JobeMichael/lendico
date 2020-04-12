@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering renders Input correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      Amount : 
+    </label>
+    <div
+      class="control"
+    >
+      <input
+        autocomplete="off"
+        class="input-element"
+        name="amount"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`rendering renders Input with error 1`] = `
+<DocumentFragment>
+  <div
+    class="field"
+  >
+    <label
+      class="label"
+    >
+      Amount : 
+    </label>
+    <div
+      class="control"
+    >
+      <input
+        autocomplete="off"
+        class="input-element"
+        name="amount"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
