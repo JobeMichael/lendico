@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import NumberFormat from "react-number-format";
 import { useDispatch, useSelector } from "react-redux";
 import MonthlyRate from "../../components/MonthlyRate/MonthlyRate";
@@ -12,37 +11,23 @@ import "./LoanCalculator.css";
 
 const LoanCalculator = () => {
   const [amount, setAmount] = useState(10000);
-  // eslint-disable-next-line no-unused-vars
   const [duration, setDuration] = useState(1);
-  const { installment, loading, error: submitError } = useSelector(
+  // TODO Error handler
+  // eslint-disable-next-line no-unused-vars
+  const { installment, loading, error } = useSelector(
     (state) => state.loanCalculator
   );
-  console.log("LoanCalculator -> submitError", submitError);
-
   const dispatch = useDispatch();
 
-  // eslint-disable-next-line no-unused-vars
-  const { register, errors, handleSubmit } = useForm({
-    validateCriteriaMode: "all",
-  });
-
-  const onSubmit = async (formValues) => {
-    console.log(formValues);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     dispatch(loanCalculatorActions.calculateInstallment({ amount, duration }));
   };
 
-  const yearOptions = [...Array(5)].map((item, index) => ({
-    value: index + 1,
-    label: `${index + 1} Jahre`,
-  }));
-
-  const amountChangeHandler = (e) => {
-    setAmount(e.target.value);
-  };
   const amountBlurHandler = () => {
     if (amount < 10000) {
       setAmount(10000);
-    } else {
+    } else if (amount > 100000) {
       setAmount(100000);
     }
   };
@@ -51,11 +36,14 @@ const LoanCalculator = () => {
     setDuration(e.target.value);
   };
 
-  console.log("Rendering count");
+  const yearOptions = [...Array(5)].map((item, index) => ({
+    value: index + 1,
+    label: `${index + 1} Jahre`,
+  }));
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit}>
         <div className="fields-wrapper">
           <NumberFormat
             customInput={Input}
@@ -63,18 +51,17 @@ const LoanCalculator = () => {
             decimalSeparator=","
             name="amount"
             label="Amount"
-            onChange={amountChangeHandler}
             onBlur={amountBlurHandler}
             value={amount}
             infoMsg="EUR 10.000 - 100.000"
-            onValueChange={({ formattedValue, value }) => {
-              setDuration(value);
+            onValueChange={(values) => {
+              const { value } = values;
+              setAmount(value);
             }}
           />
           <Select
             name="duration"
             label="Duration"
-            errors={errors}
             optionsData={yearOptions}
             onChange={durationChangeHandler}
             value={duration}

@@ -14,7 +14,6 @@ exports[`<LoanCalculator /> renders renders page properly 1`] = `
             class="label"
           >
             Amount
-             : 
           </label>
           <div
             class="control"
@@ -22,9 +21,14 @@ exports[`<LoanCalculator /> renders renders page properly 1`] = `
             <input
               autocomplete="off"
               class="input-element"
+              inputmode="numeric"
               name="amount"
-              type="number"
+              type="text"
+              value="10.000"
             />
+            <p>
+              EUR 10.000 - 100.000
+            </p>
           </div>
         </div>
         <div
@@ -34,17 +38,44 @@ exports[`<LoanCalculator /> renders renders page properly 1`] = `
             class="label"
           >
             Duration
-             : 
+             
           </label>
           <div
-            class="control"
+            class="control-select"
           >
-            <input
-              autocomplete="off"
-              class="input-element"
+            <select
+              class="select"
               name="duration"
-              type="number"
-            />
+            >
+              <option
+                value="1"
+              >
+                1 Jahre
+              </option>
+              <option
+                value="2"
+              >
+                2 Jahre
+              </option>
+              <option
+                value="3"
+              >
+                3 Jahre
+              </option>
+              <option
+                value="4"
+              >
+                4 Jahre
+              </option>
+              <option
+                value="5"
+              >
+                5 Jahre
+              </option>
+            </select>
+            <p>
+              1 - 5 Jahre
+            </p>
           </div>
         </div>
         <button
