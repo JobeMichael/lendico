@@ -1,7 +1,11 @@
 import React from "react";
 import "./MonthlyRate.css";
 
-const MonthlyRate = ({ monthlyRate }) => {
+const MonthlyRate = ({ monthlyRate, error }) => {
+  if (error) {
+    return <p className="error-msg">{error}</p>;
+  }
+
   return (
     <>
       {monthlyRate ? (

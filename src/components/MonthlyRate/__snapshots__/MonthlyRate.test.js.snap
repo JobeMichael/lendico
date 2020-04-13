@@ -14,3 +14,13 @@ exports[`rendering renders MonthlyRate correctly 1`] = `
   </span>
 </DocumentFragment>
 `;
+
+exports[`rendering renders error message correctly 1`] = `
+<DocumentFragment>
+  <p
+    class="error-msg"
+  >
+    Error
+  </p>
+</DocumentFragment>
+`;

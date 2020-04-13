@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render } from "@testing-library/react";
+import { act, cleanup, render } from "@testing-library/react";
 import MutationObserver from "mutation-observer";
 import React from "react";
 import { Provider } from "react-redux";
@@ -34,42 +34,25 @@ describe("<LoanCalculator />", () => {
         );
       });
       expect(renderResult.baseElement).toMatchSnapshot();
-
-      const selectDuration = renderResult.baseElement.querySelector(
-        "select[name='duration']"
-      );
-      const inputAmount = renderResult.baseElement.querySelector(
-        "input[name='amount']"
-      );
-
-      fireEvent.change(selectDuration, {
-        target: { value: "3" },
-      });
-      fireEvent.change(inputAmount, {
-        target: { value: "99" },
-      });
-
-      console.log(selectDuration.value);
-      console.log(inputAmount.value);
-
-      fireEvent.blur(inputAmount);
-      console.log(inputAmount.props);
-
-      fireEvent.change(inputAmount, {
-        target: { value: "99999999" },
-      });
-
-      fireEvent.blur(inputAmount);
-      console.log(inputAmount.value);
-
-      const button = renderResult.baseElement.querySelector("button");
-      console.log("button", button.innerHTML);
-      act(() => {
-        fireEvent.click(button);
-
-        const expectedActions = [{ type: "CALCULATE_INSTALLMENT_REQUEST" }];
-        expect(store.getActions()).toEqual(expectedActions);
-      });
     });
+  });
+
+  const storeLoading = mockStore({
+    loanCalculator: {
+      installment: 0,
+      loading: true,
+      error: null,
+    },
+  });
+
+  it("renders properly with state loading", () => {
+    act(() => {
+      renderResult = render(
+        <Provider store={storeLoading}>
+          <LoanCalculator />
+        </Provider>
+      );
+    });
+    expect(renderResult.baseElement).toMatchSnapshot();
   });
 });

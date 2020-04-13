@@ -17,4 +17,10 @@ describe("rendering", () => {
       "Enter Amount and duration to calculate the installment"
     );
   });
+
+  test("renders error message correctly", () => {
+    const { asFragment } = render(<MonthlyRate error="Error" />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

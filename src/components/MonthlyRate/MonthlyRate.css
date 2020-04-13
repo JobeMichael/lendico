@@ -1,5 +1,3 @@
-
-
 .monthly-rate-value,
 .monthly-rate-label {
   font-size: 35px;
@@ -7,4 +5,13 @@
 }
 .monthly-rate-value {
   font-weight: 700;
+}
+
+.error-msg {
+  color: red;
+}
+
+.error-msg::before {
+  display: inline;
+  content: "⚠ ";
 }

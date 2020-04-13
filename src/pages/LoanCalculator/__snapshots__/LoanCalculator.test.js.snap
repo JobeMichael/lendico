@@ -1,5 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<LoanCalculator /> renders properly with state loading 1`] = `
+<body>
+  <div>
+    <form>
+      <div
+        class="fields-wrapper"
+      >
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+          >
+            Amount
+          </label>
+          <div
+            class="control"
+          >
+            <input
+              autocomplete="off"
+              class="input-element"
+              inputmode="numeric"
+              name="amount"
+              type="text"
+              value="10.000"
+            />
+            <p>
+              EUR 10.000 - 100.000
+            </p>
+          </div>
+        </div>
+        <div
+          class="field"
+        >
+          <label
+            class="label"
+          >
+            Duration
+             
+          </label>
+          <div
+            class="control-select"
+          >
+            <select
+              class="select"
+              name="duration"
+            >
+              <option
+                value="1"
+              >
+                1 Jahre
+              </option>
+              <option
+                value="2"
+              >
+                2 Jahre
+              </option>
+              <option
+                value="3"
+              >
+                3 Jahre
+              </option>
+              <option
+                value="4"
+              >
+                4 Jahre
+              </option>
+              <option
+                value="5"
+              >
+                5 Jahre
+              </option>
+            </select>
+            <p>
+              1 - 5 Jahre
+            </p>
+          </div>
+        </div>
+        <button
+          class="button"
+          data-testid="button-submit"
+          type="submit"
+        >
+          OK
+        </button>
+      </div>
+    </form>
+    <div
+      class="monthly-rate"
+    >
+      <div
+        class="loader"
+      >
+        Loading...
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`<LoanCalculator /> renders renders page properly 1`] = `
 <body>
   <div>

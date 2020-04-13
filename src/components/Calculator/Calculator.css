@@ -1,18 +1,17 @@
-.monthly-rate {
-  padding: 20px 0;
-  min-height: 300px;
+.fields-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: #fff;
+  padding: 40px 0;
   border: 1px solid #ccc;
-}
-.monthly-rate p {
-  font-size: 18px;
+  box-sizing: border-box;
+  border-bottom: none;
 }
 
 @media only screen and (max-width: 700px) {
-  .monthly-rate {
+  .fields-wrapper {
     flex-direction: column;
+    padding: 0 25px;
   }
 }
