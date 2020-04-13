@@ -18,3 +18,16 @@ yarn global add serve
 serve -s build
 
 ```
+
+### Devlopment
+```
+yarn
+yarn start
+```
+
+### Testin
+```
+yarn test
+```
+
+
