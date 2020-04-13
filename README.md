@@ -14,7 +14,7 @@ serve -s build
 ```
 
 ## Detail
-
+- used redux in this app but without redux also we can solve this. Since it mentioned in the task `usage of state container`, I have used it.
 - For mocking, I am using mockapi.io
 - this app will look perfect even in small devices.
 - tests are included with good coverage.
