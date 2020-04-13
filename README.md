@@ -25,7 +25,7 @@ yarn
 yarn start
 ```
 
-### Testin
+### Testing
 ```
 yarn test
 ```
