@@ -1,5 +1,4 @@
 import React from "react";
-import "react-dropdown/style.css";
 import "./Select.css";
 
 const Select = ({ label, optionsData, name, infoMsg, ...rest }) => {
