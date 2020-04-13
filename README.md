@@ -2,7 +2,7 @@
 ## Detail
 
 - For mocking, I am using mockapi.io
-- this app can also be viewed in small devices without style changes.
+- this app will look perfect even in small devices.
 - tests are included with good coverage.
 
 ### Deploy & Demo
