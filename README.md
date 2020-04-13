@@ -4,7 +4,8 @@ I have deployed this coding task in my github pages, you can check using below l
 
 [Demo URL](https://jobemichael.github.io/)
 
-Also, you can find the build folder in this repository and you can run using any static server.
+Also,The build folder is availble
+You may serve it with a static server
 
 ```
 yarn global add serve
