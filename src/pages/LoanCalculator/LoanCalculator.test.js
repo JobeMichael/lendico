@@ -53,6 +53,8 @@ describe("<LoanCalculator />", () => {
         </Provider>
       );
     });
-    expect(renderResult.baseElement).toMatchSnapshot();
+
+    const loadingEle = renderResult.baseElement.querySelector(".loader");
+    expect(loadingEle.innerHTML).toBe("Loading...");
   });
 });

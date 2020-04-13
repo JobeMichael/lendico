@@ -73,7 +73,7 @@ describe("<LoanCalculator />", () => {
       expect(inputAmount.value).toBe("100.000");
     });
 
-    it("should request submit ", () => {
+    it("should submit the form", () => {
       act(() => {
         renderResult = render(setup());
       });

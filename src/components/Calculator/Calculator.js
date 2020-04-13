@@ -48,8 +48,7 @@ const Calculator = () => {
             onBlur={amountBlurHandler}
             value={amount}
             infoMsg="EUR 10.000 - 100.000"
-            onValueChange={(values) => {
-              const { value } = values;
+            onValueChange={({ value }) => {
               setAmount(value);
             }}
           />
