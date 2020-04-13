@@ -18,3 +18,16 @@
   background-color: #fff;
   border: 1px solid #ccc;
 }
+.monthly-rate p {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 700px) {
+  .monthly-rate {
+    flex-direction: column;
+  }
+  .fields-wrapper {
+    flex-direction: column;
+    padding: 0 25px;
+  }
+}

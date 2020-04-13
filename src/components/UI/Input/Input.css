@@ -66,3 +66,19 @@ input[type="number"] {
   display: inline;
   content: "⚠ ";
 } */
+
+@media only screen and (max-width: 700px) {
+  .field {
+    margin: 50px 0px 0 0;
+    width: 100%;
+  }
+  .field:first-child {
+    margin-right: 0;
+  }
+  .control {
+    width: 100%;
+  }
+  .input-element {
+    width: 100%;
+  }
+}
