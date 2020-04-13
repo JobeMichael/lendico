@@ -1,5 +1,5 @@
 .button {
-  background-color: #29bdba;
+  background-color: #004055;
   border: none;
   color: #fff;
   outline: none;
@@ -18,7 +18,7 @@
   }
 }
 .button:hover {
-  background-color: #004055;
+  background-color: #29bdba;
 }
 
 .Button:first-of-type {

@@ -13,7 +13,7 @@
   margin: 0;
   font-size: 12px;
   margin-top: 6px;
-  color: #097371;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -23,18 +23,19 @@
   align-self: baseline;
   text-transform: uppercase;
   font-weight: 700;
+  color: #fff;
 }
 
 .input-element {
   outline: none;
-  border: 2px solid rgb(122, 117, 117);
+  border: 2px solid #fff;
   background-color: transparent;
   font-size: 20px;
   padding: 6px 10px;
   display: block;
   width: 150px;
   box-sizing: border-box;
-  color: #000;
+  color: #fff;
   font-weight: 700;
   margin-top: 12px;
   line-height: 1.5;
